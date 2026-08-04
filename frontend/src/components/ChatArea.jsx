@@ -3,12 +3,7 @@ import ChatInput from './ChatInput.jsx';
 import MessageList from './MessageList.jsx';
 
 function ChatArea() {
-  const [messages, setMessages] = useState([
-    {
-      role: "ai",
-      content: "こんにちは！何かお手伝いできることはありますか？"
-    }
-  ]);
+  const [messages, setMessages] = useState([]);
   const sendMessage = async (text) => {
     const userMessage = {
       role: "user",
@@ -69,7 +64,7 @@ function ChatArea() {
   };
 
   return (
-    <main className="bg-neutral-800 flex flex-1 flex-col min-h-0">
+    <main className="flex flex-1 flex-col min-h-0">
       <MessageList messages={messages} />
       <ChatInput onSend={sendMessage} />
     </main>

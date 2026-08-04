@@ -1,87 +1,166 @@
-function Sidebar({ open, onClose }) {
+import { faBars, faGear, faPaperPlane, faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+function Sidebar({ open, onClose }) {
   return (
     <>
-      {/* 背景 */}
-      {open && (
-        <div
-          onClick={onClose}
-          className="fixed inset-0 z-40 bg-black/50 md:hidden"
-        />
-      )}
-
+      <div
+        onClick={onClose}
+        className={`
+          bg-black/50
+          fixed
+          inset-0
+          md:hidden
+          transition-opacity
+          z-40
+          ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
+        `}
+      />
       <aside
         className={`
-          fixed
-          left-0
-          top-0
-          z-50
-          flex
-          h-screen
-          w-72
-          flex-col
           bg-neutral-900
-          transition-transform
-          duration-300
-
-          ${open ? "translate-x-0" : "-translate-x-full"}
-
+          fixed
+          flex
+          flex-col
+          h-screen
+          left-0
           md:static
           md:translate-x-0
-          md:w-64
-          lg:w-72
+          top-0
+          transition-transform
+          w-64
+          z-50
+          ${open ? "translate-x-0" : "-translate-x-full"}
         `}
       >
-
-        <div className="flex items-center justify-between p-5">
-
-          <h2 className="text-xl font-bold">
-            Compass
-          </h2>
-
-          <button
-            className="flex rounded-lg w-8 h-8 justify-center items-center p-2 hover:bg-neutral-800 md:hidden"
-            onClick={onClose}
-          >
-            ✕
-          </button>
-
-        </div>
-
-        <div className="px-4">
-
+        <div className="flex gap-2 items-center p-4">
           <button
             className="
+              cursor-pointer
+              flex
+              h-10
+              hover:bg-neutral-800
+              items-center
+              justify-center
+              md:hidden
+              rounded-full
+              transition-colors
+              w-10
+            "
+            onClick={onClose}
+          >
+            <FontAwesomeIcon icon={faXmark} />
+          </button>
+          <div className="font-bold text-lg">
+            Compass
+          </div>
+        </div>
+        <div className="p-4">
+          <button
+            className="
+              bg-gradient-to-r
+              cursor-pointer
+              from-blue-500
+              hover:from-blue-400
+              hover:to-cyan-400
+              py-2
+              rounded-xl
+              to-cyan-500
+              transition-colors
               w-full
-              rounded-2xl
-              bg-neutral-800
-              py-3
-              font-semibold
-              transition
-              hover:bg-neutral-700
             "
           >
-            ＋ 新しいチャット
+            <FontAwesomeIcon icon={faPlus} /> 新しいチャット
           </button>
-
         </div>
-
-        <div className="mt-6 flex-1 space-y-2 overflow-y-auto px-3">
-
-          <button className="w-full rounded-xl px-4 py-3 text-left hover:bg-neutral-800">
-            チャット1（仮置き）
+        <div className="flex-1 overflow-y-auto p-4">
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
           </button>
-
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            チャット
+          </button>
         </div>
-
         <div className="p-4">
-
-          <button className="w-full rounded-xl px-4 py-3 text-left hover:bg-neutral-800">
-            ⚙ 設定
+          <button className="hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+            <FontAwesomeIcon icon={faGear} /> 設定
           </button>
-
         </div>
-
       </aside>
     </>
   );

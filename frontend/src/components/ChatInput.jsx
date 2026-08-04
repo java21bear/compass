@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function ChatInput({ onSend }) {
   const [text, setText] = useState("");
@@ -9,19 +11,15 @@ function ChatInput({ onSend }) {
   };
 
   return (
-    <div className="bg-neutral-800 p-2 md:p-4">
-      <div className="flex w-full gap-3 rounded-full bg-neutral-700 p-2">
+    <div className="md:p-4 p-2">
+      <div className="bg-neutral-700 flex gap-2 p-2 rounded-full">
         <textarea
-          rows={1}
-          value={text}
-          placeholder="メッセージを送信..."
           onChange={(e) => setText(e.target.value)}
           className="
             flex-1
             resize-none
-            px-3
+            px-4
             py-2
-            text-white
             outline-none
             placeholder:text-neutral-400
           "
@@ -32,25 +30,29 @@ function ChatInput({ onSend }) {
               submit();
             }
           }}
+          placeholder="質問してみましょう"
+          rows={1}
+          value={text}
         />
         <button
-          onClick={submit}
           className="
+            bg-gradient-to-r
+            cursor-pointer
             flex
+            from-blue-500
             h-10
-            w-10
+            hover:from-blue-400
+            hover:to-cyan-400
             items-center
             justify-center
             rounded-full
-            bg-gradient-to-r
-            from-blue-500
             to-cyan-500
-            transition
-            hover:from-blue-400
-            hover:to-cyan-400
+            transition-colors
+            w-10
           "
+          onClick={submit}
         >
-          ↑
+          <FontAwesomeIcon icon={faPaperPlane} />
         </button>
       </div>
     </div>

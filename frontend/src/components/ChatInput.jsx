@@ -11,15 +11,14 @@ function ChatInput({ onSend }) {
   };
 
   return (
-    <div className="md:p-4 p-2">
-      <div className="bg-neutral-700 flex gap-2 p-2 rounded-full">
+    <div className="max-w-200 p-4 w-full">
+      <div className="bg-neutral-700 flex gap-2 items-center p-2 rounded-full">
         <textarea
           onChange={(e) => setText(e.target.value)}
           className="
             flex-1
+            px-2
             resize-none
-            px-4
-            py-2
             outline-none
             placeholder:text-neutral-400
           "
@@ -40,7 +39,7 @@ function ChatInput({ onSend }) {
             cursor-pointer
             flex
             from-blue-500
-            h-10
+            h-8
             hover:from-blue-400
             hover:to-cyan-400
             items-center
@@ -48,7 +47,7 @@ function ChatInput({ onSend }) {
             rounded-full
             to-cyan-500
             transition-colors
-            w-10
+            w-8
           "
           onClick={submit}
         >

@@ -38,14 +38,14 @@ function Sidebar({ open, onClose }) {
             className="
               cursor-pointer
               flex
-              h-10
+              h-8
               hover:bg-neutral-800
               items-center
               justify-center
               md:hidden
               rounded-full
               transition-colors
-              w-10
+              w-8
             "
             onClick={onClose}
           >
@@ -157,7 +157,7 @@ function Sidebar({ open, onClose }) {
           </button>
         </div>
         <div className="p-4">
-          <button className="hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
+          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
             <FontAwesomeIcon icon={faGear} /> 設定
           </button>
         </div>

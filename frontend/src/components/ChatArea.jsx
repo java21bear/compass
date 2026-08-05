@@ -19,7 +19,7 @@ function ChatArea() {
     ]);
     try {
       const response = await fetch(
-        "http://localhost:8080/compass/chat",
+        "http://localhost:8080/chat",
         {
           method: "POST",
           headers: {
@@ -64,7 +64,7 @@ function ChatArea() {
   };
 
   return (
-    <main className="flex flex-1 flex-col min-h-0">
+    <main className="flex flex-1 flex-col items-center min-h-0">
       <MessageList messages={messages} />
       <ChatInput onSend={sendMessage} />
     </main>

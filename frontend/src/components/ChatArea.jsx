@@ -19,7 +19,7 @@ function ChatArea() {
     ]);
     try {
       const response = await fetch(
-        "http://localhost:8080/chat",
+        `${import.meta.env.VITE_API_URL}/chat`,
         {
           method: "POST",
           headers: {

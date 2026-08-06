@@ -14,16 +14,13 @@ function App() {
         open={sidebarOpen}
       />
       <div className="flex flex-1 flex-col">
-        <header className="bg-neutral-900 flex gap-2 items-center md:hidden p-4">
+        <header className="bg-neutral-900 flex gap-2 h-16 items-center md:hidden p-4">
           <button
-            className="cursor-pointer flex h-8 hover:bg-neutral-800 items-center justify-center rounded-full transition-colors w-8"
+            className="cursor-pointer flex h-10 hover:bg-neutral-800 items-center justify-center rounded-full transition-colors w-10"
             onClick={() => setSidebarOpen(true)}
           >
             <FontAwesomeIcon icon={faBars} />
           </button>
-          <h1 className="font-bold text-lg">
-            Compass
-          </h1>
         </header>
         <ChatArea />
       </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUp, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function ChatInput({ onSend }) {
@@ -17,7 +17,7 @@ function ChatInput({ onSend }) {
           onChange={(e) => setText(e.target.value)}
           className="
             flex-1
-            px-2
+            px-4
             resize-none
             outline-none
             placeholder:text-neutral-400
@@ -39,7 +39,7 @@ function ChatInput({ onSend }) {
             cursor-pointer
             flex
             from-blue-500
-            h-8
+            h-10
             hover:from-blue-400
             hover:to-cyan-400
             items-center
@@ -47,11 +47,11 @@ function ChatInput({ onSend }) {
             rounded-full
             to-cyan-500
             transition-colors
-            w-8
+            w-10
           "
           onClick={submit}
         >
-          <FontAwesomeIcon icon={faPaperPlane} />
+          <FontAwesomeIcon icon={faArrowUp} />
         </button>
       </div>
     </div>

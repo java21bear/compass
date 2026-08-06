@@ -33,27 +33,27 @@ function Sidebar({ open, onClose }) {
           ${open ? "translate-x-0" : "-translate-x-full"}
         `}
       >
-        <div className="flex gap-2 items-center p-4">
+        <div className="flex gap-2 h-16 items-center justify-between p-4">
+          <div className="font-bold text-lg">
+            Compass
+          </div>
           <button
             className="
               cursor-pointer
               flex
-              h-8
+              h-10
               hover:bg-neutral-800
               items-center
               justify-center
               md:hidden
               rounded-full
               transition-colors
-              w-8
+              w-10
             "
             onClick={onClose}
           >
             <FontAwesomeIcon icon={faXmark} />
           </button>
-          <div className="font-bold text-lg">
-            Compass
-          </div>
         </div>
         <div className="p-4">
           <button

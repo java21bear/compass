@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ../backend
+cd backend
 set -a
 if [ -f ".env.local" ]; then
   source .env.local

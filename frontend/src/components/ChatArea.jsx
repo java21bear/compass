@@ -18,30 +18,28 @@ function ChatArea() {
       }
     ]);
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/chat`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            message: text
-          })
-        }
-      );
-      if (!response.ok) {
-        throw new Error("通信エラー");
-      }
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/chat`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: text
+        })
+      });
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
-      let answer = "";
+      let result = "";
       while (true) {
         const { done, value } = await reader.read();
-        if (done) {
-          break;
-        }
-        answer += decoder.decode(value, { stream: true });
+        if (done) break;
+        result += decoder.decode(value, { stream: true });
+      }
+      const json = JSON.parse(result);
+      const message = json.message;
+      let answer = "";
+      for (const char of message) {
+        answer += char;
         setMessages(prev => {
           const copy = [...prev];
           copy[copy.length - 1] = {
@@ -50,6 +48,7 @@ function ChatArea() {
           };
           return copy;
         });
+        await new Promise(resolve => setTimeout(resolve, 10));
       }
     } catch (error) {
       setMessages(prev => {

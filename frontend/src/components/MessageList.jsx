@@ -1,17 +1,18 @@
 import ReactMarkdown from "react-markdown";
 
-function MessageList({ messages }) {
+function MessageList({ messages, messageRefs }) {
   return (
-    <div className="flex-1 max-w-200 overflow-y-auto p-4 w-full">
-      <div className="flex flex-col gap-8">
+    <div className="flex-1 overflow-y-auto p-4 w-full">
+      <div className="flex flex-col gap-8 max-w-200 mx-auto">
         {messages.map((message, index) => (
           <div
-            key={index}
             className={
               message.role === "ai"
                 ? "flex"
                 : "flex justify-end"
             }
+            key={index}
+            ref={el => messageRefs.current[index] = el}
           >
             <div
               className={

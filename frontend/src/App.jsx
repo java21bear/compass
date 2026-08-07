@@ -16,7 +16,7 @@ function App() {
       <div className="flex flex-1 flex-col">
         <header className="bg-neutral-900 flex gap-2 h-16 items-center md:hidden p-4">
           <button
-            className="cursor-pointer flex h-10 hover:bg-neutral-800 items-center justify-center rounded-full transition-colors w-10"
+            className="cursor-pointer flex h-8 hover:bg-neutral-800 items-center justify-center rounded-full transition-colors w-8"
             onClick={() => setSidebarOpen(true)}
           >
             <FontAwesomeIcon icon={faBars} />

@@ -1,21 +1,19 @@
 package com.github.java21bear.compass.service;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.ChatClient.CallResponseSpec;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.github.java21bear.compass.dto.ChatRequest;
-import com.github.java21bear.compass.dto.ChatResponse;
+import reactor.core.publisher.Flux;
 
 @Service
 public class ChatService {
-  @Autowired
-  private ChatClient.Builder chatClientBuilder;
+  private final ChatClient chatClient;
 
-  public ChatResponse call(ChatRequest chatRequest) {
-    ChatClient chatClient = chatClientBuilder.build();
-    CallResponseSpec response = chatClient.prompt().user(chatRequest.message()).call();
-    return new ChatResponse(response.content());
+  public ChatService(ChatClient.Builder builder) {
+    this.chatClient = builder.build();
+  }
+
+  public Flux<String> stream(String message) {
+    return chatClient.prompt().user(message).stream().content();
   }
 }

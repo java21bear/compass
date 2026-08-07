@@ -41,14 +41,14 @@ function Sidebar({ open, onClose }) {
             className="
               cursor-pointer
               flex
-              h-10
+              h-8
               hover:bg-neutral-800
               items-center
               justify-center
               md:hidden
               rounded-full
               transition-colors
-              w-10
+              w-8
             "
             onClick={onClose}
           >

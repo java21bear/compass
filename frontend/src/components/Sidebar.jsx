@@ -72,95 +72,62 @@ function Sidebar({ open, onClose }) {
               w-full
             "
           >
-            <FontAwesomeIcon icon={faPlus} /> 新しいチャット
+            <FontAwesomeIcon icon={faPlus} /> 新しいチャット（未実装）
           </button>
         </div>
         <div className="flex-1 overflow-y-auto p-4">
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            チャット履歴（未実装）
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
-          </button>
-          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
-          </button>
-          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
-          </button>
-          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
-          </button>
-          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
-          </button>
-          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
-          </button>
-          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
-          </button>
-          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
-          </button>
-          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
-          </button>
-          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
-          </button>
-          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
-          </button>
-          <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            チャット
+            *
           </button>
         </div>
         <div className="p-4">
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            <FontAwesomeIcon icon={faGear} /> 設定
+            <FontAwesomeIcon icon={faGear} /> 設定（未実装）
           </button>
         </div>
       </aside>

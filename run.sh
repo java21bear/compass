@@ -10,7 +10,7 @@ else
 fi
 set +a
 if [ ! -f build/libs/compass-0.0.1.jar ]; then
-  ./gradlew build
+  ./gradlew bootJar
 fi
 java -jar build/libs/compass-0.0.1.jar > /dev/null 2>&1 &
 BACKEND_PID=$!

@@ -19,9 +19,9 @@ AIとの対話を通じて、履修計画の作成を支援するとともに、
 
 分類 | 技術
 ---|---
+Language | Java, TypeScript
 Frontend | React, Vite, Tailwind CSS
 Backend | Spring Boot, Spring WebFlux, Spring AI
-Language | Java 21, TypeScript
 AI | Gemini API
 RAG | Embedding, Vector Store
 Document | PDF

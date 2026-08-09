@@ -62,15 +62,15 @@ Response
 
 ### API一覧
 
-|Method|Endpoint|概要|
-|---|---|---|
-|POST|`/chat`|AIへ質問を送信|
+Method|Endpoint|概要
+---|---|---
+POST|`/chat`|AIへ質問を送信
 
 ### デモ
 
-以下のURLから実際にCompassをお試しいただけます。
+以下のリンクから、実際にアプリをお試しいただけます。
 
-https://compass-3on5.onrender.com
+<a href="https://compass-3on5.onrender.com" target="_blank">Compass</a>
 
 ## セットアップ手順
 

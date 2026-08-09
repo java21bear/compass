@@ -60,15 +60,15 @@ function Sidebar({ open, onClose }) {
             className="
               bg-linear-to-r
               cursor-pointer
-              from-orange-500
-              hover:from-orange-400
-              hover:to-amber-400
-              hover:via-orange-500
+              from-indigo-500
+              hover:from-indigo-400
+              hover:to-violet-400
+              hover:via-indigo-500
               py-2
               rounded-xl
-              to-amber-500
+              to-violet-500
               transition-colors
-              via-orange-600
+              via-indigo-600
               w-full
             "
           >

@@ -3,9 +3,12 @@ import ChatInput from './ChatInput.jsx';
 import MessageList from './MessageList.jsx';
 
 function ChatArea() {
+  const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState([]);
   const messageRefs = useRef([]);
   const sendMessage = async (text) => {
+    if (isLoading) return;
+    setIsLoading(true);
     const userIndex = messages.length;
     const userMessage = {
       role: "user",
@@ -65,6 +68,8 @@ function ChatArea() {
         };
         return copy;
       });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -74,7 +79,10 @@ function ChatArea() {
         messages={messages}
         messageRefs={messageRefs}
       />
-      <ChatInput onSend={sendMessage} />
+      <ChatInput
+        disabled={isLoading}
+        onSend={sendMessage}
+      />
     </main>
   );
 }

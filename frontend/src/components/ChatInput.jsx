@@ -2,9 +2,10 @@ import { useState } from "react";
 import { faArrowUp, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function ChatInput({ onSend }) {
+function ChatInput({ disabled, onSend }) {
   const [text, setText] = useState("");
   const submit = () => {
+    if (disabled) return;
     if (!text.trim()) return;
     onSend(text);
     setText("");
@@ -37,6 +38,9 @@ function ChatInput({ onSend }) {
           className="
             bg-indigo-500
             cursor-pointer
+            disabled:cursor-default
+            disabled:opacity-50
+            disabled:hover:bg-indigo-500
             flex
             h-8
             hover:bg-indigo-400
@@ -46,6 +50,7 @@ function ChatInput({ onSend }) {
             transition-colors
             w-8
           "
+          disabled={disabled}
           onClick={submit}
         >
           <FontAwesomeIcon icon={faArrowUp} />

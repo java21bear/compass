@@ -8,7 +8,7 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="bg-neutral-800 flex h-screen text-white">
+    <div className="flex h-screen text-white">
       <Sidebar
         onClose={() => setSidebarOpen(false)}
         open={sidebarOpen}

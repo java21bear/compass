@@ -70,7 +70,9 @@ POST|`/chat`|AIへ質問を送信
 
 以下のリンクから、実際にアプリをお試しいただけます。
 
-<a href="https://compass-3on5.onrender.com" target="_blank">Compass</a>
+⚠️ Renderの無料プランを利用しているため、起動に時間がかかることがあります。
+
+[Compassを使ってみる](https://compass-3on5.onrender.com)
 
 ## セットアップ手順
 

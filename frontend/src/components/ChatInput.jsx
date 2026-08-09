@@ -35,17 +35,14 @@ function ChatInput({ onSend }) {
         />
         <button
           className="
-            bg-gradient-to-r
+            bg-orange-500
             cursor-pointer
             flex
-            from-blue-500
             h-8
-            hover:from-blue-400
-            hover:to-cyan-400
+            hover:bg-orange-400
             items-center
             justify-center
             rounded-full
-            to-cyan-500
             transition-colors
             w-8
           "

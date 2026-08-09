@@ -58,15 +58,17 @@ function Sidebar({ open, onClose }) {
         <div className="p-4">
           <button
             className="
-              bg-gradient-to-r
+              bg-linear-to-r
               cursor-pointer
-              from-blue-500
-              hover:from-blue-400
-              hover:to-cyan-400
+              from-orange-500
+              hover:from-orange-400
+              hover:to-amber-400
+              hover:via-orange-500
               py-2
               rounded-xl
-              to-cyan-500
+              to-amber-500
               transition-colors
+              via-orange-600
               w-full
             "
           >

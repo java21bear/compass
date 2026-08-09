@@ -6,36 +6,56 @@ AIとの対話を通じて、履修計画の作成を支援するとともに、
 
 本システムは、RAG（Retrieval-Augmented Generation）の有効性を評価することを目的とした研究の成果物として開発しています。
 
-## 特徴
+## できること
 
-- AIチャットによる履修相談
-- Gemini APIを利用した自然言語応答
-- URLを参照したプロンプト拡張（将来的にRAGへ移行予定）
+- 2026年度PL科目に関する質問
+- 履修計画に関する相談
+- シラバスの内容に関する質問
+- AIとの対話による履修計画の作成支援
 
 ## 使用技術
 
-|分類|技術|
-|---|---|
-|Frontend|React, Vite, Tailwind CSS|
-|Backend|Spring Boot|
-|Language|Java 21, TypeScript|
-|AI|Gemini API|
-|Build Tool|Gradle|
-|Version Control|Git, GitHub|
+分類 | 技術
+---|---
+Frontend | React, Vite, Tailwind CSS
+Backend | Spring Boot, Spring WebFlux, Spring AI
+Language | Java 21, TypeScript
+AI | Gemini API
+RAG | Embedding, Vector Store
+Document | PDF
+Build Tool | Gradle
+Container | Docker
+Version Control | Git, GitHub
+Deployment | Render
 
 ## システム構成
 
 ```
 Browser
-    │
-    ▼
+│
+▼
 React (Vite)
-    │ HTTP
-    ▼
+│
+▼
 Spring Boot
-    │
-    ▼
-Gemini API
+│
+│
+├── Spring AI
+│   ▲
+│   │
+│   ├── Vector Store
+│   │   ▲
+│   │   │
+│   │   Embedding
+│   │   ▲
+│   │   │
+│   │   PDF
+│   │
+│   │
+│   └── Gemini API
+│
+▼
+Response
 ```
 
 ## API一覧
@@ -151,6 +171,6 @@ Ctrl + C
 
 ## 今後の予定
 
-- RAGの実装
-- ログイン機能
-- 会話履歴保存
+- Embeddingしたデータを永続化する
+- ログイン機能を実装する
+- 会話履歴を保存できるようにする

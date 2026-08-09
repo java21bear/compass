@@ -33,9 +33,23 @@ function MessageList({ messages, messageRefs }) {
                   `
               }
             >
-              <ReactMarkdown>
-                {message.content}
-              </ReactMarkdown>
+              {message.role === "ai" && message.content === "" ? (
+                <>
+                  <span className="animate-pulse">
+                    .
+                  </span>
+                  <span className="animate-pulse [animation-delay:500ms]">
+                    .
+                  </span>
+                  <span className="animate-pulse [animation-delay:1000ms]">
+                    .
+                  </span>
+                </>
+              ) : (
+                <ReactMarkdown>
+                  {message.content}
+                </ReactMarkdown>
+              )}
             </div>
           </div>
         ))}

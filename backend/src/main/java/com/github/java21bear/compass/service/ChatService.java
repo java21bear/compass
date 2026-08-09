@@ -26,13 +26,11 @@ public class ChatService {
       .reduce("", (a, b) -> a + "\n" + b);
     return chatClient.prompt()
       .system("""
-        あなたは大学の履修案内アシスタントです。
+        あなたは会津大学の履修計画支援チャットボットです。
         以下の情報を参考にして、質問に回答してください。
         
         【参考情報】
         %s
-        
-        参考情報に答えがない場合は、「提供された情報からは分かりません」と回答してください。
         """.formatted(context))
       .user(message)
       .stream()

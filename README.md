@@ -6,14 +6,16 @@ AIとの対話を通じて、履修計画の作成を支援するとともに、
 
 本システムは、RAG（Retrieval-Augmented Generation）の有効性を評価することを目的とした研究の成果物として開発しています。
 
-## できること
+## システムの概要
+
+### できること
 
 - 2026年度PL科目に関する質問
 - 履修計画に関する相談
 - シラバスの内容に関する質問
 - AIとの対話による履修計画の作成支援
 
-## 使用技術
+### 使用技術
 
 分類 | 技術
 ---|---
@@ -28,7 +30,7 @@ Container | Docker
 Version Control | Git, GitHub
 Deployment | Render
 
-## システム構成
+### 構成
 
 ```
 Browser
@@ -58,28 +60,48 @@ Spring Boot
 Response
 ```
 
-## API一覧
+### API一覧
 
 |Method|Endpoint|概要|
 |---|---|---|
 |POST|`/chat`|AIへ質問を送信|
 
-## デモ
+### デモ
 
 以下のURLから実際にCompassをお試しいただけます。
 
 https://compass-3on5.onrender.com
 
-## セットアップ
+## セットアップ手順
+
+以下の環境で動作を確認しています。
+
+- macOS Sequoia 15.6.1
 
 ### 1. 必要なソフトウェアを確認
 
 本システムを実行するには、以下のソフトウェアが必要です。
 
-| ソフトウェア | 推奨バージョン |
-| --- | --- |
-| Java | 21以上 |
-| Node.js | 20以上 |
+ソフトウェア | 推奨バージョン
+--- | ---
+Git | 最新版
+Java | 21
+Node.js | 24
+npm | Node.jsに付属
+
+#### Gitの確認
+
+```bash
+git --version
+```
+
+実行結果
+
+```text
+git version 2.51.0
+```
+
+`zsh: command not found: git` などと表示される場合は、Node.jsがインストールされていない可能性があります。
 
 #### Javaの確認
 
@@ -109,6 +131,20 @@ v24.18.0
 
 `zsh: command not found: node` などと表示される場合は、Node.jsがインストールされていない可能性があります。
 
+#### npmの確認
+
+```bash
+npm -v
+```
+
+実行結果
+
+```text
+12.0.2
+```
+
+`zsh: command not found: npm` などと表示される場合は、Node.jsがインストールされていない可能性があります。
+
 ### 2. リポジトリを取得
 
 ```bash
@@ -116,9 +152,9 @@ git clone https://github.com/java21bear/compass.git
 cd compass
 ```
 
-## 環境変数
+### 3. 環境変数を設定
 
-### Backend
+#### Backend
 
 `backend/.env`
 
@@ -130,7 +166,8 @@ GEMINI_API_KEY=YOUR_API_KEY
 
 APIキーの発行方法については、公式ドキュメント（[Gemini API キーを使用する](https://ai.google.dev/gemini-api/docs/api-key?hl=ja)）を参考にしてください。
 
-### Frontend
+
+#### Frontend
 
 `frontend/.env.development`
 
@@ -140,7 +177,7 @@ VITE_API_URL=http://localhost:8080
 
 バックエンドAPIのURLです。必要であれば適宜変更してください。
 
-## 起動
+### 4. 起動
 
 プロジェクトルートディレクトリで以下のコマンドを実行してください。
 
@@ -163,7 +200,7 @@ chmod +x run.sh
 http://localhost:5173
 ```
 
-## 停止
+### 5. 停止
 
 ```bash
 Ctrl + C

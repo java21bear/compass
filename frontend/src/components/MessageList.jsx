@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 function MessageList({ messages, messageRefs }) {
   return (
     <div className="flex-1 overflow-y-auto p-4 w-full">
-      <div className="flex flex-col gap-8 max-w-200 mx-auto">
+      <div className="flex flex-col gap-8 max-w-200 mx-auto pb-16">
         {messages.map((message, index) => (
           <div
             className={

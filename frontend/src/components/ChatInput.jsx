@@ -11,7 +11,7 @@ function ChatInput({ onSend }) {
   };
 
   return (
-    <div className="p-4 w-full">
+    <div className="absolute bottom-0 p-4 w-full">
       <div className="bg-neutral-700 flex gap-2 items-center max-w-200 mx-auto p-2 rounded-full">
         <textarea
           onChange={(e) => setText(e.target.value)}

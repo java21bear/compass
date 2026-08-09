@@ -69,7 +69,7 @@ function ChatArea() {
   };
 
   return (
-    <main className="flex flex-1 flex-col items-center min-h-0">
+    <main className="flex flex-1 flex-col items-center min-h-0 relative">
       <MessageList
         messages={messages}
         messageRefs={messageRefs}

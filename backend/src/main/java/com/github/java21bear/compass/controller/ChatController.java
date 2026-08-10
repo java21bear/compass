@@ -4,6 +4,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.WebSession;
 
 import com.github.java21bear.compass.dto.ChatRequest;
 import com.github.java21bear.compass.service.ChatService;
@@ -19,7 +20,7 @@ public class ChatController {
   }
 
   @PostMapping(value = "/chat", produces = MediaType.TEXT_PLAIN_VALUE)
-  public Flux<String> chat(@RequestBody ChatRequest request) {
-    return chatService.stream(request.message());
+  public Flux<String> chat(@RequestBody ChatRequest request, WebSession session) {
+    return chatService.stream(request.message(), session);
   }
 }

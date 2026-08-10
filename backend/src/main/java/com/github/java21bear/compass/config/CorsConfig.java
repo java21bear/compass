@@ -13,8 +13,9 @@ public class CorsConfig {
     CorsConfiguration config = new CorsConfiguration();
     config.addAllowedOrigin("http://localhost:5173");
     config.addAllowedOrigin("https://compass-3on5.onrender.com");
-    config.addAllowedHeader("*");
     config.addAllowedMethod("*");
+    config.addAllowedHeader("*");
+    config.setAllowCredentials(true);
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
     source.registerCorsConfiguration("/**", config);
     return new CorsWebFilter(source);

@@ -8,7 +8,6 @@ function Sidebar({ open, onClose }) {
         onClick={onClose}
         className={`
           bg-black/50
-          duration-500
           fixed
           inset-0
           md:hidden
@@ -20,8 +19,6 @@ function Sidebar({ open, onClose }) {
       <aside
         className={`
           bg-neutral-900
-          duration-500
-          ease-out
           fixed
           flex
           flex-col

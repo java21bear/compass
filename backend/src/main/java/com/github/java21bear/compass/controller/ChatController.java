@@ -1,6 +1,7 @@
 package com.github.java21bear.compass.controller;
 
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +21,10 @@ public class ChatController {
   }
 
   @PostMapping(value = "/chat", produces = MediaType.TEXT_PLAIN_VALUE)
-  public Flux<String> chat(@RequestBody ChatRequest request, WebSession session) {
-    return chatService.stream(request.message(), session);
+  public ResponseEntity<Flux<String>> chat(@RequestBody ChatRequest request, WebSession session) {
+    Flux<String> response = chatService.stream(request.message(), session);
+    return ResponseEntity.ok()
+      .header("X-Session-Id", session.getId())
+      .body(response);
   }
 }

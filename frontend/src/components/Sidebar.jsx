@@ -19,6 +19,8 @@ function Sidebar({ open, onClose }) {
       <aside
         className={`
           bg-neutral-900
+          duration-500
+          ease-out
           fixed
           flex
           flex-col

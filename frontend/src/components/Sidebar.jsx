@@ -8,6 +8,8 @@ function Sidebar({ open, onClose }) {
         onClick={onClose}
         className={`
           bg-black/50
+          duration-500
+          ease-out
           fixed
           inset-0
           md:hidden

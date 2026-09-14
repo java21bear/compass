@@ -1,4 +1,4 @@
-package com.github.java21bear.compass.session;
+package com.github.java21bear.compass.model;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -10,7 +10,7 @@ import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.WebSession;
 
-import com.github.java21bear.compass.session.ChatHistory;
+import com.github.java21bear.compass.model.ChatHistory;
 
 import reactor.core.publisher.Flux;
 

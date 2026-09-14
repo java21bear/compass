@@ -24,6 +24,8 @@ Frontend | React, Vite, Tailwind CSS
 Backend | Spring Boot, Spring WebFlux, Spring AI
 AI | Gemini API
 RAG | Embedding, Vector Store
+Database | PostgreSQL, pgvector
+Migration | Flyway
 Document | PDF
 Build Tool | Gradle
 Container | Docker
@@ -43,21 +45,25 @@ Spring Boot
 │
 │
 ├── Spring AI
-│   ▲
 │   │
 │   ├── Vector Store
-│   │   ▲
 │   │   │
-│   │   Embedding
+│   │   ▼
+│   │   PostgreSQL
+│   │   │
+│   │   pgvector
+│   │
+│   ├── Embedding
 │   │   ▲
 │   │   │
 │   │   PDF
 │   │
-│   │
 │   └── Gemini API
 │
-▼
-Response
+└── Flyway
+    │
+    ▼
+    Database Migration
 ```
 
 ### API一覧
@@ -71,6 +77,7 @@ POST|`/chat`|AIへ質問を送信
 以下のブラウザで動作を確認しています。
 
 - Safari
+- Safari (モバイル版)
 - Chrome
 
 以下のリンクから、実際にアプリをお試しいただけます。
@@ -218,9 +225,3 @@ http://localhost:5173
 ```bash
 Ctrl + C
 ```
-
-## 今後の予定
-
-- Embeddingしたデータを永続化する
-- ログイン機能を実装する
-- 会話履歴を保存できるようにする

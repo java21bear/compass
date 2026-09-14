@@ -127,7 +127,7 @@ function Sidebar({ open, onClose }) {
         </div>
         <div className="p-4">
           <button className="cursor-pointer hover:bg-neutral-800 px-4 py-2 rounded-xl text-left transition-colors w-full">
-            <FontAwesomeIcon icon={faGear} /> 設定（未実装）
+            <FontAwesomeIcon icon={faGear} /> ログイン（未実装）
           </button>
         </div>
       </aside>

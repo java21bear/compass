@@ -108,6 +108,7 @@ Git | 最新版
 Java | 21
 Node.js | 24
 npm | Node.jsに付属
+PostgreSQL | 18
 
 #### Gitの確認
 
@@ -165,6 +166,20 @@ npm -v
 
 `zsh: command not found: npm` などと表示される場合は、Node.jsがインストールされていない可能性があります。
 
+#### PostgreSQLの確認
+
+```bash
+psql --version
+```
+
+実行結果
+
+```text
+psql (PostgreSQL) 18.4
+```
+
+`zsh: command not found: psql` などと表示される場合は、PostgreSQLがインストールされていない可能性があります。
+
 ### 2. リポジトリを取得
 
 ```bash
@@ -172,7 +187,39 @@ git clone https://github.com/java21bear/compass.git
 cd compass
 ```
 
-### 3. 環境変数を設定
+### 3. データベースを作成
+
+本システムでは、PostgreSQLを使用してユーザー情報やRAGで利用するベクトルデータなどを管理しています。
+
+PostgreSQLが起動していることを確認したうえで、以下のコマンドを実行してください。
+
+```bash
+createdb compass
+```
+
+作成したデータベースに接続できることを確認します。
+
+```bash
+psql compass
+```
+
+接続後、以下のコマンドでデータベースを確認できます。
+
+```sql
+\l
+```
+
+compass が表示されていれば、データベースの作成は完了です。
+
+データベース内のテーブルや必要な拡張機能は、アプリケーション起動時にFlywayによって作成・管理されます。
+
+```sql
+\q
+```
+
+でPostgreSQLを終了できます。
+
+### 4. 環境変数を設定
 
 #### Backend
 
@@ -180,12 +227,17 @@ cd compass
 
 ```env
 GEMINI_API_KEY=YOUR_API_KEY
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=compass
+DB_USERNAME=YOUR_USERNAME
+DB_PASSWORD=YOUR_PASSWORD
 ```
 
 [Google AI Studio](https://aistudio.google.com)にて、APIキーを発行し、backend/.env に設定してください。
 
 APIキーの発行方法については、公式ドキュメント（[Gemini API キーを使用する](https://ai.google.dev/gemini-api/docs/api-key?hl=ja)）を参考にしてください。
-
 
 #### Frontend
 
@@ -197,7 +249,7 @@ VITE_API_URL=http://localhost:8080
 
 バックエンドAPIのURLです。必要であれば適宜変更してください。
 
-### 4. 起動
+### 5. 起動
 
 プロジェクトルートディレクトリで以下のコマンドを実行してください。
 
@@ -220,7 +272,7 @@ chmod +x run.sh
 http://localhost:5173
 ```
 
-### 5. 停止
+### 6. 停止
 
 ```bash
 Ctrl + C
